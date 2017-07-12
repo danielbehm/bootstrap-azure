@@ -111,7 +111,7 @@ function add_record {
   curl $CURL_OPTS --request 'PATCH' \
     --header 'X-API-Key: '"$DNS_KEY"'' \
     --data ''"$RECORD"'' \
-    $DNS_API/api/v1/servers/localhost/zones/$ZONE.
+    $DNS_API:$DNS_API_PORT/api/v1/servers/localhost/zones/$ZONE.
 }
 
 add_record "A" "$FQDN" "$PRIMARY_IP" "$DNS_TTL" "$DNS_ZONE"
